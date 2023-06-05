@@ -1,4 +1,5 @@
 #!/usr/bin/python3
-import content.py
-A = content.py
-print (A)
+
+with open("content", "r") as file:
+    content = file.read()
+    print(content)
