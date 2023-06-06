@@ -6,7 +6,7 @@ Fin = (number) % 10
 if Fin > 5:
     print(f"Last digit of {number} is {Fin} and is greater than 5")
 
-elif Fin == 0:
+elif Fin <6 and Fin != 0:
     print(f"Last digit of {number} is {Fin} and is 0")
 
 else:
