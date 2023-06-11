@@ -2,34 +2,29 @@
 #include "lists.h"
 
 /**
- *is_palindrome - checks if a singly linked list is palindrome or not
- *@head: head of the singly linked list
- *Return: 0 if it is not a palindrome, 1 if it is
- */
-
+* is_palindrome - frees a listint_t list
+* @head: pointer to list to be freed
+* Return: 1 if it is palidrome, 0 if it is not
+*/
 int is_palindrome(listint_t **head)
 {
-	listint_t *node = *head;
-	unsigned int len = 0, ind = 0;
-	int sum = 0, halfSum = 0;
+	int len = 0, i;
+	listint_t *h;
+	int aux[1000000];
 
-	if (*head == NULL)
+	h = *head;
+	if (!h)
 		return (1);
-	while (node != NULL)
+	while (h)
 	{
-		sum += node->n;
-		node = node->next;
+		aux[len] = h->n;
+		h = h->next;
 		len++;
 	}
-	node = *head;
-	for (ind = 0; ind < len / 2 ; ind++)
+	for (i = 0; i < len; i++)
 	{
-		halfSum += node->n;
-		node = node->next;
+		if (aux[i] != aux[len - 1 - i])
+			return (0);
 	}
-	if (len % 2 != 0)
-		sum -= node->n;
-	if (sum / 2 == halfSum)
-		return (1);
-	return (0);
+	return (1);
 }
