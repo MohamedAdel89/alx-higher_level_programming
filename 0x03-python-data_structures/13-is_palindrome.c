@@ -6,7 +6,6 @@
  * @head: head of linked list
  * Return:  boolean
  */
-
 int is_palindrome(listint_t **head)
 {
 	int len = 0, i = 0;
