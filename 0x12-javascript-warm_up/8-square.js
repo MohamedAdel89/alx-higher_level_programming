@@ -1,15 +1,8 @@
 #!/usr/bin/node
-if (isNaN(parseInt(process.argv[2])) === true) {
+if (isNaN(parseInt(process.argv[2]))) {
   console.log('Missing size');
-} else {
-  const max = parseInt(process.argv[2]);
-  let i, j;
-  let str;
-  for (i = 0; i < max; i++) {
-    str = '';
-    for (j = 0; j < max; j++) {
-      str = str + 'X';
-    }
-    console.log(str);
+} else if (parseInt(process.argv[2]) > 0) {
+  for (let i = 0; i < parseInt(process.argv[2]); i++) {
+    console.log('X'.repeat(parseInt(process.argv[2])));
   }
 }
